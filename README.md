@@ -22,10 +22,8 @@ sudo apt install php-xml
 
 ```sh
 sudo apt update;\
-sudo apt install texlive-full -y;\
 sudo apt install libreoffice -y;\
-sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra -y;\
-sudo apt install -y texmaker texstudio kolourpaint;\
+sudo apt install kolourpaint;\
 sudo apt install snapd -y;\
 sudo apt install nedit -y;\
 sudo apt install micro -y;\
@@ -51,6 +49,26 @@ sudo apt-get install python3-pyaudio portaudio19-dev; \
 sudo apt install phpunit php-cli php-mbstring unzip php-mysql
 
 
+```
+
+## Latex install
+- On Ubuntu :
+
+```sh
+sudo apt-get install texlive-base texlive-latex-recommended texlive-lang-french texlive-lang-english texlive-science texlive-fonts-recommended texlive-font-utils texlive-latex-recommended-doc texlive-science-doc texlive-binaries texlive-pictures texlive-pictures-doc texlive-metapost texlive-metapost-doc texlive-fonts-extra-doc texlive-fonts-extra-links texlive-bibtex-extra texlive-formats-extra texlive-latex-base texlive-latex-base-doc texlive-publishers texlive-publishers-doc
+```
+
+- On kali linux
+
+```sh
+sudo apt install texlive-full
+```
+
+- For the twice
+
+```sh
+sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra -y;\
+sudo apt install -y texmaker texstudio
 ```
 
 ## Install colorschema in micro
