@@ -47,3 +47,9 @@ sudo systemctl start docker
 sudo chmod 777 /var/run/docker.sock
 ```
 
+To list containers available on your computer, run the following command line:
+
+```shell
+docker container ls
+```
+
