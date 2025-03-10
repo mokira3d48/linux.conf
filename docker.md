@@ -21,11 +21,17 @@ sudo apt-get update
 sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 ```
 
-Download docker package .deb at [this link](https://docs.docker.com/desktop/setup/install/linux/ubuntu/).
+Download the latest DEB package of docker at [this link](https://docs.docker.com/desktop/setup/install/linux/ubuntu/#install-docker-desktop). And then, run the following command lines to install it.
 
 ```shell
  sudo apt-get update
  sudo apt-get install ./docker-desktop-amd64.deb
+```
+
+Verify the verison, to check if docker is correctly installed.
+
+```shell
+docker --version
 ```
 
 List the image available on your computer.
