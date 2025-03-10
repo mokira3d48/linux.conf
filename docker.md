@@ -27,3 +27,23 @@ Download docker package .deb at [this link](https://docs.docker.com/desktop/setu
  sudo apt-get update
  sudo apt-get install ./docker-desktop-amd64.deb
 ```
+
+List the image available on your computer.
+
+```shell
+docker image ls
+```
+
+If your output is like this:
+
+```
+permission denied while trying to connect to the Docker daemon socket at unix:///var/run/docker.sock: Head "http://%2Fvar%2Frun%2Fdocker.sock/_ping": dial unix /var/run/docker.sock: connect: permission denied
+```
+
+To fix this bugs, we can run the following command lines:
+
+```shell
+sudo systemctl start docker
+sudo chmod 777 /var/run/docker.sock
+```
+
