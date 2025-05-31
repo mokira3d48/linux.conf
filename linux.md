@@ -7,11 +7,11 @@ First of all check the output of
 
 for the touchscreen entry
 
-Then, in your file `usr/share/X11/xorg.conf.d/40-libinput.conf`.
+Then, in your file `/usr/share/X11/xorg.conf.d/40-libinput.conf`.
 
 
 ```sh
-sudo nano usr/share/X11/xorg.conf.d/40-libinput.conf
+sudo nano /usr/share/X11/xorg.conf.d/40-libinput.conf
 ```
 
 You may have a section that looks a bit like this
