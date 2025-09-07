@@ -55,7 +55,7 @@ sudo apt install phpunit php-cli php-mbstring unzip php-mysql
 - On Ubuntu :
 
 ```sh
-sudo apt-get install texlive-base texlive-latex-recommended texlive-lang-french texlive-lang-english texlive-science texlive-fonts-recommended texlive-font-utils texlive-latex-recommended-doc texlive-science-doc texlive-binaries texlive-pictures texlive-pictures-doc texlive-metapost texlive-metapost-doc texlive-fonts-extra-doc texlive-fonts-extra-links texlive-bibtex-extra texlive-formats-extra texlive-latex-base texlive-latex-base-doc texlive-publishers texlive-publishers-doc
+sudo apt-get install texlive-base texlive-latex-recommended texlive-lang-french texlive-lang-english texlive-science texlive-fonts-recommended texlive-font-utils texlive-latex-recommended-doc texlive-science-doc texlive-binaries texlive-pictures texlive-pictures-doc texlive-metapost texlive-metapost-doc texlive-fonts-extra-doc texlive-fonts-extra-links texlive-bibtex-extra texlive-formats-extra texlive-latex-base texlive-latex-base-doc texlive-publishers texlive-publishers-doc latexmk
 ```
 
 - On kali linux
@@ -67,8 +67,16 @@ sudo apt install texlive-full
 - For the twice
 
 ```sh
-sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra -y;\
-sudo apt install -y texmaker texstudio
+sudo apt-get install pandoc texlive-latex-base texlive-fonts-recommended texlive-extra-utils texlive-latex-extra -y
+```
+```sh
+sudo apt install -y texmaker
+```
+
+OR
+
+```sh
+sudo apt install -y texstudio
 ```
 
 ## Install colorschema in micro
