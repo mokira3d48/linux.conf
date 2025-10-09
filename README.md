@@ -46,7 +46,8 @@ sudo apt install -y code-oss postgresql php-pgsql postgresql-client postgresql-c
 sudo apt install telegram-desktop;\
 sudo apt install wget gpg autossh;\
 sudo apt-get install python3-pyaudio portaudio19-dev; \
-sudo apt install phpunit php-cli php-mbstring unzip php-mysql
+sudo apt install phpunit php-cli php-mbstring unzip php-mysql;
+sudo apt-get install fonts-dejavu fonts-liberation fonts-noto;
 
 
 ```
