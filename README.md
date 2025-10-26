@@ -201,3 +201,111 @@ curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.deb.sh' | sudo 
 sudo apt install symfony-cli
 
 ```
+
+## Setting date and time on Kali linux
+
+## 🎯 Définition de "efficace" pour la gestion du temps :
+
+### **Efficacité à court terme** :
+- Résultat immédiat et visible
+- Simple à exécuter
+- Pas besoin de configuration permanente
+
+### **Efficacité à long terme** :
+- Solution permanente et automatique
+- Plus fiable et précise
+- Moins d'intervention manuelle nécessaire
+
+---
+
+## 🏆 **LA SOLUTION LA PLUS EFFICACE GLOBALEMENT** :
+
+### **Configuration NTP (Network Time Protocol) + Fuseau horaire**
+
+C'est la combinaison gagnante car elle résout le problème définitivement et automatiquement.
+
+---
+
+## 🚀 **PROCÉDURE COMPLÈTE ÉTAPE PAR ÉTAPE** :
+
+### **Étape 1 : Vérifier l'état actuel**
+```bash
+# Voir l'heure actuelle et le fuseau horaire
+timedatectl status
+```
+
+### **Étape 2 : Configurer le fuseau horaire (CRUCIAL)**
+```bash
+# Lister les fuseaux horaires disponibles
+timedatectl list-timezones | grep -i europe
+
+# Définir ton fuseau horaire (exemple pour Paris)
+sudo timedatectl set-timezone Europe/Paris
+```
+
+### **Étape 3 : Activer la synchronisation automatique NTP**
+```bash
+# Activer NTP (Network Time Protocol)
+sudo timedatectl set-ntp true
+
+# Vérifier que c'est bien activé
+timedatectl status
+```
+
+### **Étape 4 : Forcer une synchronisation immédiate**
+```bash
+# Synchroniser manuellement une première fois
+sudo systemctl restart systemd-timesyncd
+
+# Vérifier la synchronisation
+timedatectl timesync-status
+```
+
+---
+
+## 🛠 **COMMANDE ULTIME TOUT-EN-UN** :
+
+Si tu veux tout configurer d'un coup (méthode la plus rapide) :
+
+```bash
+# Remplace "Europe/Paris" par ton fuseau horaire
+sudo timedatectl set-timezone Europe/Paris && \
+sudo timedatectl set-ntp true && \
+sudo systemctl restart systemd-timesyncd && \
+timedatectl status
+```
+
+---
+
+## ✅ **POURQUOI CETTE MÉTHODE EST LA PLUS EFFICACE** :
+
+| Aspect | Avantage |
+|--------|----------|
+| **Automatique** | Plus besoin d'y penser |
+| **Précision** | Synchronisé avec serveurs atomiques |
+| **Permanent** | Survit aux redémarrages |
+| **Standard** | Méthode recommandée par systemd |
+| **Simple** | Quelques commandes seulement |
+
+---
+
+## 🔧 **SOLUTIONS ALTERNATIVES (si NTP ne fonctionne pas)** :
+
+### **Méthode manuelle rapide** :
+```bash
+# Définir l'heure manuellement (moins efficace)
+sudo timedatectl set-time "2024-01-15 14:30:00"
+```
+
+### **Vérification finale** :
+```bash
+# Vérifier que tout fonctionne
+timedatectl
+```
+
+---
+
+## 💡 **CONSEIL PRO** :
+Une fois NTP configuré, ton système restera synchronisé en permanence avec une précision de quelques millisecondes. C'est la méthode utilisée par tous les serveurs professionnels.
+
+
