@@ -111,6 +111,12 @@ chmod 700 ~/.ssh
 chmod 600 ~/.ssh/authorized_keys
 ```
 
+Connect to ssh server:
+
+```
+ssh -p 2222 username@server_ip
+```
+
 ---
 
 ## **4. Firewall Configuration**
