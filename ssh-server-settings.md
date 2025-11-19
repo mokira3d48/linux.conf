@@ -113,8 +113,14 @@ chmod 600 ~/.ssh/authorized_keys
 
 Connect to ssh server:
 
-```
+```bash
 ssh -p 2222 username@server_ip
+```
+
+To copy file into ssh server:
+
+```bash
+rsync -avzP -e "ssh -p 2222" <source_file> username@192.168.100.18:<dest_file>
 ```
 
 ---
