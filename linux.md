@@ -90,7 +90,7 @@ Pour configurer le déplacement des fenêtres vers un écran externe sous Kubunt
 
 Si vous rencontrez des problèmes avec le mode plein écran qui interfère, évitez le mode plein écran ou utilisez des gestionnaires de fenêtres alternatifs comme i3 ou Awesome. Pour des configurations très avancées, consultez la documentation de KDE ou des forums spécialisés.
 
---
+---
 
 ## Méthode simple et temporaire pour blocker le clavier par défaut
 
