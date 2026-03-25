@@ -89,3 +89,34 @@ Pour configurer le déplacement des fenêtres vers un écran externe sous Kubunt
 - Après toute modification via xrandr, les paramètres sont temporaires. Pour les rendre permanents, ajoutez les commandes à vos scripts de démarrage (ex: dans `~/.config/autostart/`).
 
 Si vous rencontrez des problèmes avec le mode plein écran qui interfère, évitez le mode plein écran ou utilisez des gestionnaires de fenêtres alternatifs comme i3 ou Awesome. Pour des configurations très avancées, consultez la documentation de KDE ou des forums spécialisés.
+
+--
+
+## Méthode simple et temporaire pour blocker le clavier par défaut
+
+Utilise directement `evdev` pour désactiver le clavier jusqu'au prochain redémarrage :
+
+```bash
+sudo evtest --grab /dev/input/event0
+```
+
+Laisse ce terminal ouvert — tant qu'il tourne, le clavier intégré est bloqué. **Ferme le terminal ou fais `Ctrl+C` pour le débloquer.**
+
+---
+
+Si tu veux une commande encore plus simple en arrière-plan :
+
+```bash
+# Bloquer
+sudo evtest --grab /dev/input/event0 &> /dev/null &
+
+# Débloquer
+sudo kill $(pgrep evtest)
+```
+
+---
+
+> **Prérequis** : installe `evtest` si pas encore présent :
+> ```bash
+> sudo apt install evtest
+> ```
