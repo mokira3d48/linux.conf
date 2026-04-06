@@ -52,6 +52,25 @@ sudo apt-get install fonts-dejavu fonts-liberation fonts-noto;
 
 ```
 
+Another util dependences:
+
+```bash
+sudo apt update && sudo apt install -y \
+  libbz2-dev \
+  libreadline-dev \
+  libssl-dev \
+  libffi-dev \
+  zlib1g-dev \
+  libsqlite3-dev \
+  liblzma-dev \
+  tk-dev \
+  libncurses5-dev \
+  libncursesw5-dev \
+  libgdbm-dev \
+  uuid-dev \
+  build-essential
+```
+
 ## Latex install
 - On Ubuntu :
 
