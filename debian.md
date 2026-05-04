@@ -33,3 +33,25 @@ Application Options:
   --supported-formats      Lists supported image formats, results can vary depending on installed pixbuf loaders
   --display=DISPLAY        X display to use
 ```
+
+
+## Installation and configuration of Screen Locking for XFCE desktop
+Run the following command line:
+
+```bash
+sudo apt remove light-locker
+sudo apt install xfce4-screensaver
+```
+
+And then, run the following command line:
+
+```bash
+xset s off -dpms
+```
+
+This command line disables both the X server's screen saver and the DPMS (Display Power Management Signaling) power-saving features. 
+
+- `xset s off` turns off the screen saver (preventing the screen from blanking or activating a screensaver).
+- `-dpms` disables DPMS, which normally allows the monitor to enter low-power states (standby, suspend, or off) after a period of inactivity.
+
+The combined effect is to keep the display continuously active and powered on, without any automatic blanking or power-down. This is commonly used for presentations, watching movies, or any scenario where you want to prevent the screen from turning off due to inactivity.
