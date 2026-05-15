@@ -114,6 +114,13 @@ sudo evtest --grab /dev/input/event0 &> /dev/null &
 sudo kill $(pgrep evtest)
 ```
 
+---
+
+> **Prérequis** : installe `evtest` si pas encore présent :
+> ```bash
+> sudo apt install evtest
+> ```
+
 ## Fix Of Chromium Starting Bug
 Running Chromium on Linux often triggers this profile lock, which can be frustrating. It's usually not a serious problem, but a safety mechanism to protect your personal data from corruption. Let's walk through what's happening and get it fixed.
 
@@ -156,9 +163,4 @@ To resolve this, you can safely delete the stale lock files. The process is stra
 
 That should clear things up! Let me know if you run into any other issues.
 
----
 
-> **Prérequis** : installe `evtest` si pas encore présent :
-> ```bash
-> sudo apt install evtest
-> ```
