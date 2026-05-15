@@ -114,6 +114,48 @@ sudo evtest --grab /dev/input/event0 &> /dev/null &
 sudo kill $(pgrep evtest)
 ```
 
+## Fix Of Chromium Starting Bug
+Running Chromium on Linux often triggers this profile lock, which can be frustrating. It's usually not a serious problem, but a safety mechanism to protect your personal data from corruption. Let's walk through what's happening and get it fixed.
+
+### 🤔 What's Actually Happening?
+
+The error message indicates that Chromium has detected a **"Singleton" lock file** in your profile directory. This file acts as a "Do Not Disturb" sign, initially placed to prevent two copies of the browser from writing to your profile at the same time.
+
+The error specifically mentions another computer named `kali`, which points to two common scenarios:
+
+*   **Shared/Networked Home Directory**: If your Debian machine and the `kali` machine share the same network home directory (like NFS), a lock created on one will be visible and effective on the other.
+*   **System Hostname Change**: If your current Debian machine was previously named `kali`, the old lock file still references that old hostname, making the system think it's a different computer.
+
+In either case, a **stale lock file** left behind after an unexpected shutdown or crash is the most common culprit.
+
+### 🔧 The Step-by-Step Fix
+
+To resolve this, you can safely delete the stale lock files. The process is straightforward. **Important:** Please make sure no other Chromium processes are running before you begin.
+
+1.  **Open a Terminal**: You can usually find this in your applications menu or launch it with a keyboard shortcut (often `Ctrl + Alt + T`).
+
+2.  **Ensure All Chromium Processes are Closed**: It's a critical first step. Run this command to safely terminate any background processes that might be stuck.
+    ```bash
+    pkill -f chromium
+    ```
+    *The `-f` flag makes the command match the full process name, which is more thorough.*
+
+3.  **Delete the Lock Files**: Chromium's lock files start with the word `Singleton` and are located in your profile directory. You can delete them with one command.
+    ```bash
+    rm -rf ~/.config/chromium/Singleton*
+    ```
+    *   This command (`rm`) removes (`-rf`) all files beginning with "Singleton" in the Chromium config directory.
+    *   It will delete `SingletonLock`, `SingletonCookie`, and `SingletonSocket`, which are the three lock files commonly found.
+
+4.  **Relaunch Chromium**: You should now be able to start Chromium normally from your applications menu or by typing `chromium` in the terminal.
+
+### 💡 Additional Tips
+
+*   **If you find the lock files keep reappearing**, especially after a system crash, it might be a sign to check your system's stability or how you're shutting down the browser.
+*   **For systems with Snap packages**, the lock files might be in a different location. If the command above doesn't work, check `~/snap/chromium/common/chromium/` and delete the `Singleton*` files from there.
+
+That should clear things up! Let me know if you run into any other issues.
+
 ---
 
 > **Prérequis** : installe `evtest` si pas encore présent :
