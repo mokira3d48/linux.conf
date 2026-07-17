@@ -51,7 +51,7 @@ Si `df -T` t'affiche `vfat`, c'est confirmé : c'est du FAT32.
 
 **Option 1 — Reformater la clé/carte en exFAT** (le plus simple, si tu peux te permettre d'effacer les données)
 ```bash
-sudo mkfs.exfat -n MonDisque /dev/sdX1
+sudo mkfs.exfat -F -n MonDisque /dev/sdX1
 ```
 ⚠️ Remplace `/dev/sdX1` par le bon périphérique (vérifie avec `lsblk` avant, pour ne pas effacer le mauvais disque).
 
